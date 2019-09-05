@@ -17,14 +17,13 @@ const restoranSchema = new mongoose.Schema({
     password : {
         type : String,
         required : true,
-        minlength : 6,
-        maxlength : 12,
+        minlength : 6
     },
-    tokens : {
+    tokens : [{
         token : {
             type : String
         }
-    }
+    }]
 })
 restoranSchema.pre("save", async function(next){
     const restoran = this

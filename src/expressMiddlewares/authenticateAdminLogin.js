@@ -17,6 +17,7 @@ const authenticateAdminLogin = (req, res, next) => {
     try{
         const token = jwt.sign({username : "admin"}, "MayGodBlessInnocents",{expiresIn:"1 day"})
         req.token = token
+        
     } catch(e){
         res.status(400).send("Bir hata oluştu...")
     }
